@@ -89,6 +89,12 @@ public class JugadorResource {
         return jugadorRepository.findAll();
         }
 
+    @GetMapping("/jugadors/topFive")
+    @Timed
+    public List<Jugador> topFive() {
+        log.debug("REST request to get top 5 Jugadors");
+        return jugadorRepository.findTop5ByOrderByNumCanastasDesc();
+    }
     /**
      * GET  /jugadors/:id : get the "id" jugador.
      *

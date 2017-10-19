@@ -1,0 +1,24 @@
+{
+    "jhipsterProva1App": {
+        "valoracionJugador" : {
+            "home": {
+                "title": "Valoracion Jugadors",
+                "createLabel": "Crear nuevo Valoracion Jugador",
+                "createOrEditLabel": "Crear o editar Valoracion Jugador"
+            },
+            "created": "Un nuevo Valoracion Jugador ha sido creado con el identificador {{ param }}",
+            "updated": "Un Valoracion Jugador ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Valoracion Jugador ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Valoracion Jugador {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoracion Jugador"
+            },
+            "puntuacion": "Puntuacion",
+            "momento": "Momento",
+            "jugador": "Jugador",
+            "user": "User"
+        }
+    }
+}

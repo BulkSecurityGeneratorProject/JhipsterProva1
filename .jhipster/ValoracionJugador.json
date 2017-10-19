@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "jugador",
+            "otherEntityName": "jugador",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "valoracionJugador"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "puntuacion",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        },
+        {
+            "fieldName": "momento",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171019105257",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "valoracion_jugador",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
