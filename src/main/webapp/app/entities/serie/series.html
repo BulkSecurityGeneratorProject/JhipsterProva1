@@ -1,0 +1,83 @@
+<div>
+    <h2 data-translate="jhipsterProva1App.serie.home.title">Series</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="serie.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterProva1App.serie.home.createLabel">
+                        Create new Serie
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.nombre">Nombre</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.anoCreacion">Ano Creacion</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.descripcion">Descripcion</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.foto">Foto</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.productora">Productora</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.actor">Actor</span></th>
+                    <th><span data-translate="jhipsterProva1App.serie.genero">Genero</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="serie in vm.series track by serie.id">
+                    <td><a ui-sref="serie-detail({id:serie.id})">{{serie.id}}</a></td>
+                    <td>{{serie.nombre}}</td>
+                        <td>{{serie.anoCreacion | date:'mediumDate'}}</td>
+                    <td>{{serie.descripcion}}</td>
+                    <td>
+                        <a ng-if="serie.foto" ng-click="vm.openFile(serie.fotoContentType, serie.foto)">
+                            <img data-ng-src="{{'data:' + serie.fotoContentType + ';base64,' + serie.foto}}" style="max-height: 30px;" alt="serie image"/>
+                        </a>
+                        <span ng-if="serie.foto">{{serie.fotoContentType}}, {{vm.byteSize(serie.foto)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="productora-detail({id:serie.productora.id})">{{serie.productora.nombre}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="actor in serie.actors">
+                            <a class="form-control-static" ui-sref="actor-detail({id: actor.id})">{{actor.nombre}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="genero in serie.generos">
+                            <a class="form-control-static" ui-sref="genero-detail({id: genero.id})">{{genero.nombre}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="serie-detail({id:serie.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="serie.edit({id:serie.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="serie.delete({id:serie.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

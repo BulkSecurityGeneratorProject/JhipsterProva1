@@ -1,0 +1,24 @@
+{
+    "jhipsterProva1App": {
+        "puntuacionSerie" : {
+            "home": {
+                "title": "Puntuacion Series",
+                "createLabel": "Crear nuevo Puntuacion Serie",
+                "createOrEditLabel": "Crear o editar Puntuacion Serie"
+            },
+            "created": "Un nuevo Puntuacion Serie ha sido creado con el identificador {{ param }}",
+            "updated": "Un Puntuacion Serie ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Puntuacion Serie ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Puntuacion Serie {{ id }}?"
+            },
+            "detail": {
+                "title": "Puntuacion Serie"
+            },
+            "puntuacion": "Puntuacion",
+            "momento": "Momento",
+            "serie": "Serie",
+            "user": "User"
+        }
+    }
+}

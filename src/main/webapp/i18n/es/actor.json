@@ -1,0 +1,24 @@
+{
+    "jhipsterProva1App": {
+        "actor" : {
+            "home": {
+                "title": "Actors",
+                "createLabel": "Crear nuevo Actor",
+                "createOrEditLabel": "Crear o editar Actor"
+            },
+            "created": "Un nuevo Actor ha sido creado con el identificador {{ param }}",
+            "updated": "Un Actor ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Actor ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Actor {{ id }}?"
+            },
+            "detail": {
+                "title": "Actor"
+            },
+            "nombre": "Nombre",
+            "apellido": "Apellido",
+            "anoNacimiento": "Ano Nacimiento",
+            "foto": "Foto"
+        }
+    }
+}

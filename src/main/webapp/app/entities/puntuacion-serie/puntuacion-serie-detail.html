@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.puntuacionSerie.detail.title">Puntuacion Serie</span> {{vm.puntuacionSerie.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.puntuacionSerie.puntuacion">Puntuacion</span></dt>
+        <dd>
+            <span>{{vm.puntuacionSerie.puntuacion}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.puntuacionSerie.momento">Momento</span></dt>
+        <dd>
+            <span>{{vm.puntuacionSerie.momento | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.puntuacionSerie.serie">Serie</span></dt>
+        <dd>
+            <a ui-sref="serie-detail({id:vm.puntuacionSerie.serie.id})">{{vm.puntuacionSerie.serie.nombre}}</a>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.puntuacionSerie.user">User</span></dt>
+        <dd>
+            {{vm.puntuacionSerie.user.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="puntuacion-serie-detail.edit({id:vm.puntuacionSerie.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

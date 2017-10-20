@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity PuntuacionSerie.
+    -->
+    <changeSet id="20171020062823-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="serie_id"
+                                 baseTableName="puntuacion_serie"
+                                 constraintName="fk_puntuacion_serie_serie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="serie"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="puntuacion_serie"
+                                 constraintName="fk_puntuacion_serie_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

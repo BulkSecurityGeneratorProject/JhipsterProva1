@@ -1,0 +1,32 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.genero.detail.title">Genero</span> {{vm.genero.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.genero.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.genero.nombre}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.genero.foto">Foto</span></dt>
+        <dd>
+            <div ng-if="vm.genero.foto">
+                <a ng-click="vm.openFile(vm.genero.fotoContentType, vm.genero.foto)">
+                    <img data-ng-src="{{'data:' + vm.genero.fotoContentType + ';base64,' + vm.genero.foto}}" style="max-width: 100%;" alt="genero image"/>
+                </a>
+                {{vm.genero.fotoContentType}}, {{vm.byteSize(vm.genero.foto)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="genero-detail.edit({id:vm.genero.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

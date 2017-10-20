@@ -1,0 +1,44 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.capitulo.detail.title">Capitulo</span> {{vm.capitulo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.capitulo.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.capitulo.numero}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.capitulo.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.capitulo.nombre}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.capitulo.duracion">Duracion</span></dt>
+        <dd>
+            <span>{{vm.capitulo.duracion}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.capitulo.foto">Foto</span></dt>
+        <dd>
+            <div ng-if="vm.capitulo.foto">
+                <a ng-click="vm.openFile(vm.capitulo.fotoContentType, vm.capitulo.foto)">
+                    <img data-ng-src="{{'data:' + vm.capitulo.fotoContentType + ';base64,' + vm.capitulo.foto}}" style="max-width: 100%;" alt="capitulo image"/>
+                </a>
+                {{vm.capitulo.fotoContentType}}, {{vm.byteSize(vm.capitulo.foto)}}
+            </div>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.capitulo.serie">Serie</span></dt>
+        <dd>
+            <a ui-sref="serie-detail({id:vm.capitulo.serie.id})">{{vm.capitulo.serie.nombre}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="capitulo-detail.edit({id:vm.capitulo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

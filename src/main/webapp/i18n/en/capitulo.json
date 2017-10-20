@@ -1,0 +1,25 @@
+{
+    "jhipsterProva1App": {
+        "capitulo" : {
+            "home": {
+                "title": "Capitulos",
+                "createLabel": "Create a new Capitulo",
+                "createOrEditLabel": "Create or edit a Capitulo"
+            },
+            "created": "A new Capitulo is created with identifier {{ param }}",
+            "updated": "A Capitulo is updated with identifier {{ param }}",
+            "deleted": "A Capitulo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Capitulo {{ id }}?"
+            },
+            "detail": {
+                "title": "Capitulo"
+            },
+            "numero": "Numero",
+            "nombre": "Nombre",
+            "duracion": "Duracion",
+            "foto": "Foto",
+            "serie": "Serie"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "jhipsterProva1App": {
+        "productora" : {
+            "home": {
+                "title": "Productoras",
+                "createLabel": "Crear nuevo Productora",
+                "createOrEditLabel": "Crear o editar Productora"
+            },
+            "created": "Un nuevo Productora ha sido creado con el identificador {{ param }}",
+            "updated": "Un Productora ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Productora ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Productora {{ id }}?"
+            },
+            "detail": {
+                "title": "Productora"
+            },
+            "nombre": "Nombre",
+            "pais": "Pais",
+            "foto": "Foto"
+        }
+    }
+}

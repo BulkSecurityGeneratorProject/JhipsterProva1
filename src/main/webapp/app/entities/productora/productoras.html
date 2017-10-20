@@ -1,0 +1,65 @@
+<div>
+    <h2 data-translate="jhipsterProva1App.productora.home.title">Productoras</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="productora.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterProva1App.productora.home.createLabel">
+                        Create new Productora
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterProva1App.productora.nombre">Nombre</span></th>
+                    <th><span data-translate="jhipsterProva1App.productora.pais">Pais</span></th>
+                    <th><span data-translate="jhipsterProva1App.productora.foto">Foto</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="productora in vm.productoras track by productora.id">
+                    <td><a ui-sref="productora-detail({id:productora.id})">{{productora.id}}</a></td>
+                    <td>{{productora.nombre}}</td>
+                    <td>{{productora.pais}}</td>
+                    <td>
+                        <a ng-if="productora.foto" ng-click="vm.openFile(productora.fotoContentType, productora.foto)">
+                            <img data-ng-src="{{'data:' + productora.fotoContentType + ';base64,' + productora.foto}}" style="max-height: 30px;" alt="productora image"/>
+                        </a>
+                        <span ng-if="productora.foto">{{productora.fotoContentType}}, {{vm.byteSize(productora.foto)}}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="productora-detail({id:productora.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="productora.edit({id:productora.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="productora.delete({id:productora.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
