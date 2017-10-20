@@ -9,6 +9,12 @@
                 "main": "Entidades",
                 "jugador": "Jugador",
                 "valoracionJugador": "Valoracion Jugador",
+                "serie": "Serie",
+                "productora": "Productora",
+                "capitulo": "Capitulo",
+                "actor": "Actor",
+                "genero": "Genero",
+                "puntuacionSerie": "Puntuacion Serie",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
