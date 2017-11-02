@@ -1,49 +1,8 @@
 
-entity Serie {
+entity Jaguar {
 	nombre String,
     anoCreacion LocalDate,
     descripcion String,
-    foto ImageBlob
-}
-
-entity Productora {
-	nombre String,
-    pais String,
-    foto ImageBlob
-}
-
-entity Capitulo {
-	numero Integer,
-	nombre String,
-	duracion Double,
-    foto ImageBlob
-}
-
-entity Actor {
-	nombre String required,
-    apellido String,
-    anoNacimiento LocalDate,
-    foto ImageBlob
-}
-
-entity Genero {
-	nombre String required,
-    foto ImageBlob
-}
-
-entity PuntuacionSerie {
-	puntuacion Double,
-    momento ZonedDateTime
-}
-
-relationship ManyToMany {
-	Serie{actor(nombre)} to Actor,
-    Serie{genero(nombre)} to Genero
-}
-
-relationship ManyToOne{
-	Capitulo{serie(nombre)} to Serie,
-    Serie{productora(nombre)} to Productora,
-    PuntuacionSerie{serie(nombre)} to Serie,
-    PuntuacionSerie{user(login)} to User
+    foto ImageBlob,
+    goodCat Boolean
 }

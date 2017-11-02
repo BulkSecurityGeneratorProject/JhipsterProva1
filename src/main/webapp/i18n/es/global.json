@@ -15,6 +15,10 @@
                 "actor": "Actor",
                 "genero": "Genero",
                 "puntuacionSerie": "Puntuacion Serie",
+                "prueba": "Prueba",
+                "gatito": "Gatito",
+                "leonsito": "Leonsito",
+                "jaguar": "Jaguar",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
