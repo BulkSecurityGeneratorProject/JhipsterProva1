@@ -1,0 +1,25 @@
+{
+    "jhipsterProva1App": {
+        "jaguar" : {
+            "home": {
+                "title": "Jaguars",
+                "createLabel": "Crear nuevo Jaguar",
+                "createOrEditLabel": "Crear o editar Jaguar"
+            },
+            "created": "Un nuevo Jaguar ha sido creado con el identificador {{ param }}",
+            "updated": "Un Jaguar ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Jaguar ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Jaguar {{ id }}?"
+            },
+            "detail": {
+                "title": "Jaguar"
+            },
+            "nombre": "Nombre",
+            "anoCreacion": "Año Creacion",
+            "descripcion": "Descripcion",
+            "foto": "Foto",
+            "goodCat": "Good Cat"
+        }
+    }
+}

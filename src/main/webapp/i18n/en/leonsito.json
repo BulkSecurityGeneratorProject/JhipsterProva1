@@ -1,0 +1,25 @@
+{
+    "jhipsterProva1App": {
+        "leonsito" : {
+            "home": {
+                "title": "Leonsitos",
+                "createLabel": "Create a new Leonsito",
+                "createOrEditLabel": "Create or edit a Leonsito"
+            },
+            "created": "A new Leonsito is created with identifier {{ param }}",
+            "updated": "A Leonsito is updated with identifier {{ param }}",
+            "deleted": "A Leonsito is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Leonsito {{ id }}?"
+            },
+            "detail": {
+                "title": "Leonsito"
+            },
+            "nombre": "Nombre",
+            "anoCreacion": "Ano Creacion",
+            "descripcion": "Descripcion",
+            "foto": "Foto",
+            "goodCat": "Good Cat"
+        }
+    }
+}

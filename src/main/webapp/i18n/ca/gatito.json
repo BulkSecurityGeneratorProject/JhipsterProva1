@@ -1,0 +1,25 @@
+{
+    "jhipsterProva1App": {
+        "gatito" : {
+            "home": {
+                "title": "Gatitos",
+                "createLabel": "Create a new Gatito",
+                "createOrEditLabel": "Create or edit a Gatito"
+            },
+            "created": "A new Gatito is created with identifier {{ param }}",
+            "updated": "A Gatito is updated with identifier {{ param }}",
+            "deleted": "A Gatito is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Gatito {{ id }}?"
+            },
+            "detail": {
+                "title": "Gatito"
+            },
+            "nombre": "Nombre",
+            "anoCreacion": "Ano Creacion",
+            "descripcion": "Descripcion",
+            "foto": "Foto",
+            "goodCat": "Good Cat"
+        }
+    }
+}

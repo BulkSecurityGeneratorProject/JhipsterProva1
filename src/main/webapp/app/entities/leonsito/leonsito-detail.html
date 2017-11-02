@@ -1,0 +1,44 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.leonsito.detail.title">Leonsito</span> {{vm.leonsito.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.leonsito.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.leonsito.nombre}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.leonsito.anoCreacion">Ano Creacion</span></dt>
+        <dd>
+            <span>{{vm.leonsito.anoCreacion | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.leonsito.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{vm.leonsito.descripcion}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.leonsito.foto">Foto</span></dt>
+        <dd>
+            <div ng-if="vm.leonsito.foto">
+                <a ng-click="vm.openFile(vm.leonsito.fotoContentType, vm.leonsito.foto)">
+                    <img data-ng-src="{{'data:' + vm.leonsito.fotoContentType + ';base64,' + vm.leonsito.foto}}" style="max-width: 100%;" alt="leonsito image"/>
+                </a>
+                {{vm.leonsito.fotoContentType}}, {{vm.byteSize(vm.leonsito.foto)}}
+            </div>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.leonsito.goodCat">Good Cat</span></dt>
+        <dd>
+            <span>{{vm.leonsito.goodCat}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="leonsito-detail.edit({id:vm.leonsito.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,69 @@
+<div>
+    <h2 data-translate="jhipsterProva1App.gatito.home.title">Gatitos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="gatito.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterProva1App.gatito.home.createLabel">
+                        Create new Gatito
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterProva1App.gatito.nombre">Nombre</span></th>
+                    <th><span data-translate="jhipsterProva1App.gatito.anoCreacion">Ano Creacion</span></th>
+                    <th><span data-translate="jhipsterProva1App.gatito.descripcion">Descripcion</span></th>
+                    <th><span data-translate="jhipsterProva1App.gatito.foto">Foto</span></th>
+                    <th><span data-translate="jhipsterProva1App.gatito.goodCat">Good Cat</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="gatito in vm.gatitos track by gatito.id">
+                    <td><a ui-sref="gatito-detail({id:gatito.id})">{{gatito.id}}</a></td>
+                    <td>{{gatito.nombre}}</td>
+                        <td>{{gatito.anoCreacion | date:'mediumDate'}}</td>
+                    <td>{{gatito.descripcion}}</td>
+                    <td>
+                        <a ng-if="gatito.foto" ng-click="vm.openFile(gatito.fotoContentType, gatito.foto)">
+                            <img data-ng-src="{{'data:' + gatito.fotoContentType + ';base64,' + gatito.foto}}" style="max-height: 30px;" alt="gatito image"/>
+                        </a>
+                        <span ng-if="gatito.foto">{{gatito.fotoContentType}}, {{vm.byteSize(gatito.foto)}}</span>
+                    </td>
+                    <td>{{gatito.goodCat}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="gatito-detail({id:gatito.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="gatito.edit({id:gatito.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="gatito.delete({id:gatito.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

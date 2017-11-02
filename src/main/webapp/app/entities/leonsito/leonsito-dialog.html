@@ -1,0 +1,75 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLeonsitoLabel" data-translate="jhipsterProva1App.leonsito.home.createOrEditLabel">Create or edit a Leonsito</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.leonsito.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.leonsito.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterProva1App.leonsito.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.leonsito.nombre"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterProva1App.leonsito.anoCreacion" for="field_anoCreacion">Ano Creacion</label>
+                <div class="input-group">
+                    <input id="field_anoCreacion" type="text" class="form-control" name="anoCreacion" uib-datepicker-popup="{{dateformat}}" ng-model="vm.leonsito.anoCreacion" is-open="vm.datePickerOpenStatus.anoCreacion"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('anoCreacion')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterProva1App.leonsito.descripcion" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="vm.leonsito.descripcion"
+                    />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setFoto($file, vm.leonsito)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="jhipsterProva1App.leonsito.foto" for="field_foto">Foto</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.leonsito.fotoContentType + ';base64,' + vm.leonsito.foto}}" style="max-height: 100px;" ng-if="vm.leonsito.foto" alt="leonsito image"/>
+                <div ng-if="vm.leonsito.foto" class="help-block clearfix">
+                    <span class="pull-left">{{vm.leonsito.fotoContentType}}, {{vm.byteSize(vm.leonsito.foto)}}</span>
+                    <button type="button" ng-click="vm.leonsito.foto=null;vm.leonsito.fotoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setFoto($file, vm.leonsito)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="foto" id="field_foto"
+                    ng-model="vm.leonsito.foto"
+                    />
+            <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                    ng-model="vm.leonsito.fotoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterProva1App.leonsito.goodCat" for="field_goodCat">Good Cat</label>
+                <input type="checkbox" name="goodCat" id="field_goodCat"
+                          ng-model="vm.leonsito.goodCat"/>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

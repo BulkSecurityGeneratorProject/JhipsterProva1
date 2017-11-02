@@ -1,0 +1,44 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.gatito.detail.title">Gatito</span> {{vm.gatito.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.gatito.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.gatito.nombre}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.gatito.anoCreacion">Ano Creacion</span></dt>
+        <dd>
+            <span>{{vm.gatito.anoCreacion | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.gatito.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{vm.gatito.descripcion}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.gatito.foto">Foto</span></dt>
+        <dd>
+            <div ng-if="vm.gatito.foto">
+                <a ng-click="vm.openFile(vm.gatito.fotoContentType, vm.gatito.foto)">
+                    <img data-ng-src="{{'data:' + vm.gatito.fotoContentType + ';base64,' + vm.gatito.foto}}" style="max-width: 100%;" alt="gatito image"/>
+                </a>
+                {{vm.gatito.fotoContentType}}, {{vm.byteSize(vm.gatito.foto)}}
+            </div>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.gatito.goodCat">Good Cat</span></dt>
+        <dd>
+            <span>{{vm.gatito.goodCat}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="gatito-detail.edit({id:vm.gatito.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

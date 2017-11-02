@@ -1,0 +1,69 @@
+<div>
+    <h2 data-translate="jhipsterProva1App.jaguar.home.title">Jaguars</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="jaguar.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterProva1App.jaguar.home.createLabel">
+                        Create new Jaguar
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterProva1App.jaguar.nombre">Nombre</span></th>
+                    <th><span data-translate="jhipsterProva1App.jaguar.anoCreacion">Ano Creacion</span></th>
+                    <th><span data-translate="jhipsterProva1App.jaguar.descripcion">Descripcion</span></th>
+                    <th><span data-translate="jhipsterProva1App.jaguar.foto">Foto</span></th>
+                    <th><span data-translate="jhipsterProva1App.jaguar.goodCat">Good Cat</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="jaguar in vm.jaguars track by jaguar.id">
+                    <td><a ui-sref="jaguar-detail({id:jaguar.id})">{{jaguar.id}}</a></td>
+                    <td>{{jaguar.nombre}}</td>
+                        <td>{{jaguar.anoCreacion | date:'mediumDate'}}</td>
+                    <td>{{jaguar.descripcion}}</td>
+                    <td>
+                        <a ng-if="jaguar.foto" ng-click="vm.openFile(jaguar.fotoContentType, jaguar.foto)">
+                            <img data-ng-src="{{'data:' + jaguar.fotoContentType + ';base64,' + jaguar.foto}}" style="max-height: 30px;" alt="jaguar image"/>
+                        </a>
+                        <span ng-if="jaguar.foto">{{jaguar.fotoContentType}}, {{vm.byteSize(jaguar.foto)}}</span>
+                    </td>
+                    <td>{{jaguar.goodCat}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="jaguar-detail({id:jaguar.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="jaguar.edit({id:jaguar.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="jaguar.delete({id:jaguar.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

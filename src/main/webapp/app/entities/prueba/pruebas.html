@@ -1,0 +1,67 @@
+<div>
+    <h2 data-translate="jhipsterProva1App.prueba.home.title">Pruebas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="prueba.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterProva1App.prueba.home.createLabel">
+                        Create new Prueba
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterProva1App.prueba.nombre">Nombre</span></th>
+                    <th><span data-translate="jhipsterProva1App.prueba.anoCreacion">Ano Creacion</span></th>
+                    <th><span data-translate="jhipsterProva1App.prueba.descripcion">Descripcion</span></th>
+                    <th><span data-translate="jhipsterProva1App.prueba.foto">Foto</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prueba in vm.pruebas track by prueba.id">
+                    <td><a ui-sref="prueba-detail({id:prueba.id})">{{prueba.id}}</a></td>
+                    <td>{{prueba.nombre}}</td>
+                        <td>{{prueba.anoCreacion | date:'mediumDate'}}</td>
+                    <td>{{prueba.descripcion}}</td>
+                    <td>
+                        <a ng-if="prueba.foto" ng-click="vm.openFile(prueba.fotoContentType, prueba.foto)">
+                            <img data-ng-src="{{'data:' + prueba.fotoContentType + ';base64,' + prueba.foto}}" style="max-height: 30px;" alt="prueba image"/>
+                        </a>
+                        <span ng-if="prueba.foto">{{prueba.fotoContentType}}, {{vm.byteSize(prueba.foto)}}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="prueba-detail({id:prueba.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prueba.edit({id:prueba.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prueba.delete({id:prueba.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

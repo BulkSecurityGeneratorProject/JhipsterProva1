@@ -1,0 +1,44 @@
+
+<div>
+    <h2><span data-translate="jhipsterProva1App.jaguar.detail.title">Jaguar</span> {{vm.jaguar.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterProva1App.jaguar.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.jaguar.nombre}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.jaguar.anoCreacion">Ano Creacion</span></dt>
+        <dd>
+            <span>{{vm.jaguar.anoCreacion | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.jaguar.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{vm.jaguar.descripcion}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.jaguar.foto">Foto</span></dt>
+        <dd>
+            <div ng-if="vm.jaguar.foto">
+                <a ng-click="vm.openFile(vm.jaguar.fotoContentType, vm.jaguar.foto)">
+                    <img data-ng-src="{{'data:' + vm.jaguar.fotoContentType + ';base64,' + vm.jaguar.foto}}" style="max-width: 100%;" alt="jaguar image"/>
+                </a>
+                {{vm.jaguar.fotoContentType}}, {{vm.byteSize(vm.jaguar.foto)}}
+            </div>
+        </dd>
+        <dt><span data-translate="jhipsterProva1App.jaguar.goodCat">Good Cat</span></dt>
+        <dd>
+            <span>{{vm.jaguar.goodCat}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="jaguar-detail.edit({id:vm.jaguar.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
